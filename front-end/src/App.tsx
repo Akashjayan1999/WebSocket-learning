@@ -20,6 +20,9 @@ useEffect(() => {
   ws.onclose = () => {
     console.log("disconnected");
   };
+  return () => {
+    socket?.close();
+  }
 }, []);
 
   if(!socket){
